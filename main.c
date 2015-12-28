@@ -10,19 +10,20 @@
  *
 */
 
-#include <avr/io.h>
-#include "twi.h"
 #include "ov7670.h"
-#include "ssd1289.h"
-#include "uart.h"
+
+#ifdef WITH_LCD
+	#include "hardware/lcd.h"
+#else
+	#include "hardware/uart.h"
+#endif
 
 // To turn off test pattern comment the test_pattern definition in ov7670_config.h
 
-int main()
+int main(void)
 {
 	#ifdef WITH_LCD
-		SSD1289_Init();
-		FillScreen(RGB(0, 0, 0));
+		lcd_init();
 	#else
 		uart_init(B115200);
 	#endif
@@ -32,6 +33,7 @@ int main()
 	while(1)
 	{
 		#ifndef WITH_LCD
+			// Magic numbers (sync signal)
 			uart_put_string("START");
 		#endif
 

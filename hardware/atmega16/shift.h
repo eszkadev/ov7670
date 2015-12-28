@@ -8,7 +8,7 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
-#include "config.h"
+#include "ssd1289_config.h"
 
 void shift(uint16_t data);
 

@@ -1,7 +1,6 @@
-#ifndef _UART_
-#define _UART_
+#ifndef _UART_H_
+#define _UART_H_
 
-#include "uart.h"
 #include <avr/io.h>
 
 #define B9600 0
@@ -11,7 +10,7 @@
 void uart_init(int baud);
 uint8_t uart_data_ready(void);
 char uart_get(void);
-void uart_put(char data);
+void uart_put(uint8_t data);
 void uart_put_string(char * data);
 
 #endif

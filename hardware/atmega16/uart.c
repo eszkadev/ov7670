@@ -87,7 +87,7 @@ char uart_get(void)
 	return UDR;
 }
 
-void uart_put(char data)
+void uart_put(uint8_t data)
 {
 	while (!(UCSRA & (1 << UDRE)));
 	UDR = data;

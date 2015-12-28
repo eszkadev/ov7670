@@ -1,5 +1,5 @@
-#ifndef TWI__H
-#define TWI__H
+#ifndef _TWI_H_
+#define _TWI_H_
 
 #include <avr/io.h>
 #include <util/twi.h>

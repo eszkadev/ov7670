@@ -3,9 +3,8 @@
  * Author: Szymon Kłos
 */
 
-#include <avr/io.h>
-#include "twi.h"
 #include "ov7670_config.h"
+#include <avr/io.h>
 
 #define res_QQVGA 0
 #define res_QVGA 1
